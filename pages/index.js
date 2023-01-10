@@ -114,6 +114,7 @@ export default function Home() {
               </p>
               <hr className='my-5' />
               {/* V------- icon container -------V */}
+
               <div>
                 {/* V------ Proficient ------V */}
                 <div className='flex justify-between'>
