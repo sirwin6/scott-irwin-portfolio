@@ -20,6 +20,8 @@ import {
   SiSequelize,
 } from 'react-icons/si';
 
+import { BsArrowDownShort } from 'react-icons/bs';
+
 const inter = Inter({ subsets: ['latin'] });
 
 const useMediaQuery = (width) => {
@@ -91,16 +93,19 @@ export default function Home() {
                 layout='fill'
                 objectFit='contain'
                 quality={100}
-                src='/headshot.jpg'
+                src='/headshot.png'
               />
             </div>
           </div>
           <div className='flex justify-center items-center laptop:w-3/4 mx-5'>
-            <div>
-              <p className='iphone:text-lg laptop:text-xl text-center'>
-                A <span className='text-blue-500'>Software Developer </span>
+            <div className='font-serif'>
+              <p className='font-extralight iphone:text-lg laptop:text-xl text-center'>
+                A{' '}
+                <span className='text-blue-500 hover:text-cyan-400 duration-500'>
+                  Software Developer{' '}
+                </span>
                 with experience building
-                <span className='text-blue-500'>
+                <span className='text-blue-500 hover:text-cyan-400 duration-700'>
                   {' '}
                   fullstack web applications.{' '}
                 </span>
@@ -118,51 +123,51 @@ export default function Home() {
               <div>
                 {/* V------ Proficient ------V */}
                 <div className='flex justify-between'>
-                  <div className='flex flex-col justify-center-center'>
-                    <DiJavascript size={80} color='gray' />
+                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
+                    <DiJavascript size={40} color='gray' />
                     <p className='text-gray-500 text-center'>Javascript</p>
                   </div>
-                  <div className='flex flex-col justify-center-center'>
-                    <DiHtml5 size={80} color='gray' />
+                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
+                    <DiHtml5 size={40} color='gray' />
                     <p className='text-gray-500 text-center'>HTML</p>
                   </div>
-                  <div className='flex flex-col justify-center-center'>
-                    <DiCss3 size={80} color='gray' />
+                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
+                    <DiCss3 size={40} color='gray' />
                     <p className='text-gray-500 text-center'>CSS</p>
                   </div>
-                  <div className='flex flex-col justify-center-center'>
-                    <DiReact size={80} color='gray' />
+                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
+                    <DiReact size={40} color='gray' />
                     <p className='text-gray-500 text-center'>React</p>
                   </div>
-                  <div className='flex flex-col justify-center-center'>
-                    <SiRedux size={80} color='gray' />
+                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
+                    <SiRedux size={40} color='gray' />
                     <p className='text-gray-500 text-center'>Redux</p>
                   </div>
-                  <div className='flex flex-col justify-center-center'>
-                    <DiNodejsSmall size={80} color='gray' />
+                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
+                    <DiNodejsSmall size={40} color='gray' />
                     <p className='text-gray-500 text-center'>Express</p>
                   </div>
                 </div>
                 {/* V------ Knowledgeable ------V */}
-                <div className='flex justify-evenly mt-5'>
-                  <div className='flex flex-col justify-center-center'>
-                    <SiPostgresql size={80} color='gray' />
+                <div className='flex justify-evenly mt-10'>
+                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
+                    <SiPostgresql size={40} color='gray' />
                     <p className='text-gray-500 text-center'>Postgresql</p>
                   </div>
-                  <div className='flex flex-col justify-center-center'>
-                    <SiSequelize size={80} color='gray' />
+                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
+                    <SiSequelize size={40} color='gray' />
                     <p className='text-gray-500 text-center'>Sequelize</p>
                   </div>
-                  <div className='flex flex-col justify-center-center'>
-                    <SiNextdotjs size={80} color='gray' />
+                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
+                    <SiNextdotjs size={40} color='gray' />
                     <p className='text-gray-500 text-center'>Next</p>
                   </div>
-                  <div className='flex flex-col justifycenter-center'>
-                    <SiFirebase size={80} color='gray' />
+                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
+                    <SiFirebase size={40} color='gray' />
                     <p className='text-gray-500 text-center'>Firebase</p>
                   </div>
-                  <div className='flex flex-col justifycenter-center'>
-                    <SiTailwindcss size={80} color='gray' />
+                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
+                    <SiTailwindcss size={40} color='gray' />
                     <p className='text-gray-500 text-center'>Tailwindcss</p>
                   </div>
                 </div>
@@ -170,7 +175,54 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className='flex m-5 border border-black iphone:h-1/2 laptop:h-1/2'></div>
+        <div className='flex justify-center'>
+          <hr className='mt-20 w-1/4 text-center' />
+          <h1 className='text-center text-gray-500 mt-16 mx-5 text-2xl font-serif flex flex-shrink'>
+            P r o j e c t s
+          </h1>
+          <hr className='mt-20 w-1/4 text-center flex flex-shrink' />
+        </div>
+        <div className='flex justify-center'>
+          <BsArrowDownShort
+            size={30}
+            color={'gray'}
+            className='mt-10 animate-bounce duration-150'
+          />
+        </div>
+        <div className=' font-serif flex flex-col justify-center items-center m-5 iphone:h-auto laptop:h-auto'>
+          <div className='relative min-h-[300px] h-full laptop:w-full tablet:w-full iphone:w-full'>
+            <Image
+              alt='Slice App'
+              layout='fill'
+              objectFit='contain'
+              quality={100}
+              src='/sliceMock.png'
+              className='hover:scale-105 duration-500'
+            />
+          </div>
+          <div className='w-3/4'>
+            <p className='relative text-center min-h-[300px] h-full laptop:w-auto tablet:w-auto iphone:w-auto'>
+              Slice exists as a platform for creating ecosystems/organizations
+              of any size that want to organize tasks, favors, chores, or
+              anything that needs to get done and requires a village. Within
+              these ecosystems, users are given credit for completing something
+              that needs to get done, which promotes transparency and
+              accountability for who does what.
+              <br />
+              <br />{' '}
+              <span className='text-blue-500 hover:text-cyan-400 duration-500'>
+                Frontend:{' '}
+              </span>
+              JavaScript, Next.JS, React - Redux, Tailwind CSS, Material UI{' '}
+              <br />
+              <br />{' '}
+              <span className='text-blue-500 hover:text-cyan-400 duration-500'>
+                Backend:{' '}
+              </span>
+              Firebase/Firestore
+            </p>
+          </div>
+        </div>
         <div className='flex m-5 border border-black iphone:h-1/2 laptop:h-1/2'></div>
       </main>
     </div>
