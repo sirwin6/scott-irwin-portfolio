@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { Inter } from '@next/font/google';
 import styles from '../styles/Home.module.css';
 import { useEffect, useState, useCallback } from 'react';
 import { SlMenu } from 'react-icons/sl';
@@ -19,10 +18,10 @@ import {
   SiPostgresql,
   SiSequelize,
 } from 'react-icons/si';
-
 import { BsArrowDownShort } from 'react-icons/bs';
-
-const inter = Inter({ subsets: ['latin'] });
+import { AiOutlineLink } from 'react-icons/ai';
+import Aos from 'aos';
+import 'aos/dist/aos';
 
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(false);
@@ -39,6 +38,7 @@ const useMediaQuery = (width) => {
     const media = window.matchMedia(`(max-width: ${width}px)`);
     media.addListener(updateTarget);
 
+    Aos.init({ duration: 2000 });
     // Check on mount (callback is not called until a change occurs)
     if (media.matches) {
       setTargetReached(true);
@@ -64,7 +64,10 @@ export default function Home() {
         <>
           {isBreakpoint ? (
             <nav className='flex justify-between items-center laptop:px-6 iphone:p-2 laptop:mt-6 iphone:mt-2'>
-              <p className='text-blue-500 laptop:text-3xl p-2 iphone:text-2xl iphone:text-center'>
+              <p
+                id='glow'
+                className='text-blue-500 laptop:text-3xl p-2 iphone:text-2xl iphone:text-center'
+              >
                 S.I.
               </p>
               <div className='mr-10 fixed p-2 right-0 bg-slate-200 rounded-md'>
@@ -73,19 +76,30 @@ export default function Home() {
             </nav>
           ) : (
             <nav className='flex justify-between items-center laptop:px-6 iphone:p-2 laptop:mt-6 iphone:mt-2'>
-              <p className='text-blue-500 laptop:text-3xl p-2 iphone:text-xl iphone:text-center'>
+              <p
+                id='glow'
+                className='text-blue-500 laptop:text-3xl p-5 iphone:text-xl iphone:text-center bg-slate-100 shadow-md rounded-[100%]'
+              >
                 S.I.
               </p>
-              <div className='flex laptop:w-1/4 iphone:w-full items-center '>
-                <p className='px-3'>Home</p>
-                <p className='px-3'>About</p>
-                <p className='px-3'>Projects</p>
-                <p className='px-3'>Contact</p>
+              <div className='flex laptop:w-1/3 iphone:w-full items-center justify-between'>
+                <p className='px-3 hover:underline hover:scale-110 duration-500'>
+                  Home
+                </p>
+                <p className='px-3 hover:underline hover:scale-110 duration-500'>
+                  Projects
+                </p>
+                <p className='px-3 hover:underline hover:scale-110 duration-500'>
+                  About
+                </p>
+                <p className='px-3 hover:underline hover:scale-110 duration-500'>
+                  Contact
+                </p>
               </div>
             </nav>
           )}
         </>
-        <div className='laptop:flex tablet:flex m-5 mx-10 iphone:h-3/4 laptop:h-3/4 iphone:overflow-auto'>
+        <div className='laptop:flex tablet:flex m-5 mx-10 iphone:h-3/4 laptop:h-3/4'>
           <div className='flex h-full tablet:w-full iphone:w-full laptop:w-1/2'>
             <div className='relative min-h-[300px] h-full laptop:w-full tablet:w-full iphone:w-full'>
               <Image
@@ -190,17 +204,35 @@ export default function Home() {
           />
         </div>
         <div className=' font-serif flex flex-col justify-center items-center m-5 iphone:h-auto laptop:h-auto'>
-          <div className='relative min-h-[300px] h-full laptop:w-full tablet:w-full iphone:w-full'>
+          <div className='relative min-h-[300px] h-auto laptop:w-full tablet:w-full iphone:w-full'>
             <Image
               alt='Slice App'
               layout='fill'
               objectFit='contain'
               quality={100}
               src='/sliceMock.png'
-              className='hover:scale-105 duration-500'
             />
           </div>
-          <div className='w-3/4'>
+          <div className='w-3/4 flex flex-col justify-center items-center'>
+            <div className='flex justify-center items-center '>
+              <a
+                href='https://slice-task.vercel.app/'
+                target='blank'
+                className='py-5 mx-2 underline hover:no-underline'
+              >
+                D e p l o y e d
+              </a>
+              <AiOutlineLink />
+              <a
+                href='https://github.com/2209-Capstone-Team-B/Slice'
+                target='blank'
+                className='py-5 mx-2 underline hover:no-underline'
+              >
+                R e p o s i t o r y
+              </a>
+
+              <AiOutlineLink />
+            </div>
             <p className='relative text-center min-h-[300px] h-full laptop:w-auto tablet:w-auto iphone:w-auto'>
               Slice exists as a platform for creating ecosystems/organizations
               of any size that want to organize tasks, favors, chores, or
@@ -223,7 +255,14 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className='flex m-5 border border-black iphone:h-1/2 laptop:h-1/2'></div>
+        <div
+          data-aos='fade-in'
+          className='flex m-5 border justify-center items-center iphone:h-1/2 laptop:h-1/2'
+        >
+          <p className='text-2xl'>
+            This Website is still being built! Keep checking in to see it grow!
+          </p>
+        </div>
       </main>
     </div>
   );
