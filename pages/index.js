@@ -230,7 +230,6 @@ export default function Home() {
               >
                 R e p o s i t o r y
               </a>
-
               <AiOutlineLink />
             </div>
             <p className='relative text-center min-h-[300px] h-full laptop:w-auto tablet:w-auto iphone:w-auto'>
