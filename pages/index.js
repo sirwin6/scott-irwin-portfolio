@@ -86,9 +86,12 @@ export default function Home() {
                 <p className='px-3 hover:underline hover:scale-110 duration-500'>
                   Home
                 </p>
-                <p className='px-3 hover:underline hover:scale-110 duration-500'>
+                <a
+                  href='#projects'
+                  className='px-3 hover:underline hover:scale-110 duration-500'
+                >
                   Projects
-                </p>
+                </a>
                 <p className='px-3 hover:underline hover:scale-110 duration-500'>
                   About
                 </p>
@@ -194,6 +197,7 @@ export default function Home() {
           <h1 className='text-center text-gray-500 mt-16 mx-5 text-2xl font-serif flex flex-shrink'>
             P r o j e c t s
           </h1>
+          <a id='projects'></a>
           <hr className='mt-20 w-1/4 text-center flex flex-shrink' />
         </div>
         <div className='flex justify-center'>
