@@ -238,7 +238,8 @@ export default function Home() {
         </div>
         <div className='flex m-5 border justify-center items-center iphone:h-1/2 laptop:h-1/2'>
           <p className='text-2xl'>
-            This Website is still being built! Keep checking in to see it grow!
+            This Website is still being built! Keep checking in to watch me
+            build and debug!
           </p>
         </div>
       </main>
