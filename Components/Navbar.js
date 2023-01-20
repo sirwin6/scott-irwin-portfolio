@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className='flex justify-between items-center laptop:px-6 iphone:p-2 laptop:mt-6 iphone:mt-2'>
       <p
         id='glow'
-        className='text-blue-500 laptop:text-3xl p-5 iphone:text-xl iphone:text-center bg-slate-100 shadow-md rounded-[100%]'
+        className='text-blue-500 laptop:text-3xl p-5 iphone:text-xl iphone:text-center bg-slate-100 shadow-md'
       >
         S.I.
       </p>
