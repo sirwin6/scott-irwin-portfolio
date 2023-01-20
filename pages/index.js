@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
+import Link from 'next/link';
+import Navbar from '../Components/Navbar';
 import { useEffect, useState, useCallback } from 'react';
 import { SlMenu } from 'react-icons/sl';
 import {
@@ -75,36 +77,12 @@ export default function Home() {
               </div>
             </nav>
           ) : (
-            <nav className='flex justify-between items-center laptop:px-6 iphone:p-2 laptop:mt-6 iphone:mt-2'>
-              <p
-                id='glow'
-                className='text-blue-500 laptop:text-3xl p-5 iphone:text-xl iphone:text-center bg-slate-100 shadow-md rounded-[100%]'
-              >
-                S.I.
-              </p>
-              <div className='flex laptop:w-1/3 iphone:w-full items-center justify-between'>
-                <p className='px-3 hover:underline hover:scale-110 duration-500'>
-                  Home
-                </p>
-                <a
-                  href='#projects'
-                  className='px-3 hover:underline hover:scale-110 duration-500'
-                >
-                  Projects
-                </a>
-                <p className='px-3 hover:underline hover:scale-110 duration-500'>
-                  About
-                </p>
-                <p className='px-3 hover:underline hover:scale-110 duration-500'>
-                  Contact
-                </p>
-              </div>
-            </nav>
+            <Navbar />
           )}
         </>
-        <div className='laptop:flex tablet:flex m-5 mx-10 iphone:h-3/4 laptop:h-3/4'>
+        <div className='laptop:flex tablet:flex m-5 mx-10 iphone:h-auto laptop:h-auto'>
           <div className='flex h-full tablet:w-full iphone:w-full laptop:w-1/2'>
-            <div className='relative min-h-[300px] h-full laptop:w-full tablet:w-full iphone:w-full'>
+            <div className='relative min-h-[300px] h-atuo laptop:w-full tablet:w-full iphone:w-full'>
               <Image
                 alt='Scott Irwin'
                 layout='fill'
@@ -224,7 +202,7 @@ export default function Home() {
                 target='blank'
                 className='py-5 mx-2 underline hover:no-underline'
               >
-                D e p l o y e d
+                S i t e
               </a>
               <AiOutlineLink />
               <a
@@ -232,7 +210,7 @@ export default function Home() {
                 target='blank'
                 className='py-5 mx-2 underline hover:no-underline'
               >
-                R e p o s i t o r y
+                G i t H u b
               </a>
               <AiOutlineLink />
             </div>
