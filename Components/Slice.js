@@ -24,7 +24,7 @@ export default function Slice() {
         <AiOutlineLink />
       </div>
       <p className='relative text-center min-h-[300px] h-full laptop:w-auto tablet:w-auto iphone:w-auto'>
-        <span className='leading-10'>
+        <span id='lineSpaced'>
           Slice exists as a platform for creating ecosystems/organizations of
           any size that want to organize tasks, favors, chores, or anything that
           needs to get done and requires a village. Within these ecosystems,
