@@ -5,7 +5,7 @@ import { Fade, Zoom, Slide } from 'react-awesome-reveal';
 
 export default function Footer() {
   return (
-    <footer className='flex h-1/2 bg-blue-100 bottom-0'>
+    <>
       <div className='flex flex-col justify-around pl-10 items-start h-full w-1/2'>
         <Link href='/'>Home</Link>
         <Link href='/#projects'>Projects</Link>
@@ -23,6 +23,6 @@ export default function Footer() {
           <AiFillGithub size={40} />
         </Link>
       </div>
-    </footer>
+    </>
   );
 }
