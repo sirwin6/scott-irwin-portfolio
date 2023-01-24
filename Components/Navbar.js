@@ -17,12 +17,12 @@ export default function Navbar() {
         >
           Home
         </Link>
-        <a
-          href='#projects'
+        <Link
+          href='/#projects'
           className='px-3 hover:underline hover:scale-110 duration-500'
         >
           Projects
-        </a>
+        </Link>
         <Link
           href='/about'
           className='px-3 hover:underline hover:scale-110 duration-500'
