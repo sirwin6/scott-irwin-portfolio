@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { AiOutlineLink } from 'react-icons/ai';
 
@@ -5,21 +6,21 @@ export default function Slice() {
   return (
     <>
       <div className='flex justify-center items-center '>
-        <a
+        <Link
           href='https://slice-task.vercel.app/'
           target='blank'
           className='py-5 mx-2 underline hover:no-underline'
         >
           S i t e
-        </a>
+        </Link>
         <AiOutlineLink />
-        <a
+        <Link
           href='https://github.com/2209-Capstone-Team-B/Slice'
           target='blank'
           className='py-5 mx-2 underline hover:no-underline'
         >
           G i t H u b
-        </a>
+        </Link>
         <AiOutlineLink />
       </div>
       <p className='relative text-center min-h-[300px] h-full laptop:w-auto tablet:w-auto iphone:w-auto'>
