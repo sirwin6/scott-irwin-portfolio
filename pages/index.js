@@ -114,7 +114,9 @@ export default function Home() {
             direction='right'
             className='flex justify-center items-center laptop:w-3/4 mx-5'
           >
-            <BioSkills />
+            <div>
+              <BioSkills />
+            </div>
           </Fade>
         </div>
         <div className='flex justify-center'>
