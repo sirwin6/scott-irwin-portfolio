@@ -50,3 +50,15 @@
     border-top: 1000px solid transparent;
     border-bottom: 1000px solid transparent;
 }
+
+#underline {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-decoration: underline;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#underline:hover {
+    text-decoration: none;
+}

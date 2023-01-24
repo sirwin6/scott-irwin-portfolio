@@ -64,10 +64,7 @@ export default function Home() {
         <>
           {isBreakpoint ? (
             <nav className='flex justify-between items-center laptop:px-6 iphone:p-2 laptop:mt-6 iphone:mt-2'>
-              <p
-                id='glow'
-                className='text-blue-500 laptop:text-3xl p-2 iphone:text-2xl iphone:text-center'
-              >
+              <p className='text-blue-500 rounded-[100%] laptop:text-3xl p-2 iphone:text-2xl iphone:text-center bg-slate-100 shadow-md'>
                 S.I.
               </p>
               <div className='mr-10 fixed p-2 right-0 bg-slate-200 rounded-md'>
@@ -76,10 +73,7 @@ export default function Home() {
             </nav>
           ) : (
             <nav className='flex justify-between items-center laptop:px-6 iphone:p-2 laptop:mt-6 iphone:mt-2'>
-              <p
-                id='glow'
-                className='text-blue-500 laptop:text-3xl p-5 iphone:text-xl iphone:text-center bg-slate-100 shadow-md'
-              >
+              <p className='text-blue-500 rounded-[100%] laptop:text-3xl p-5 iphone:text-xl iphone:text-center bg-slate-100 shadow-md'>
                 S.I.
               </p>
               <div className='flex laptop:w-1/3 iphone:w-full items-center justify-between'>
@@ -135,11 +129,13 @@ export default function Home() {
                   </span>
                   <br />
                   <br />
-                  My time in the Navy taught me the value of strong leadership,
-                  teamwork, and perseverance. I often rely my Bachelor of Arts -
-                  BA in Psychology and Design & Engineering from Wesleyan
-                  University to think critically about problems in order to find
-                  an efficient and inclusive solution.
+                  <span className='leading-10'>
+                    My time in the Navy taught me the value of strong
+                    leadership, teamwork, and perseverance. I often rely my
+                    Bachelor of Arts - BA in Psychology and Design & Engineering
+                    from Wesleyan University to think critically about problems
+                    in order to find an efficient and inclusive solution.
+                  </span>
                 </p>
                 <hr className='my-20' />
                 {/* V------- icon container -------V */}

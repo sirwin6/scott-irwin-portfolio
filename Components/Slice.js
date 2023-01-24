@@ -9,7 +9,7 @@ export default function Slice() {
         <Link
           href='https://slice-task.vercel.app/'
           target='blank'
-          className='py-5 mx-2 underline hover:no-underline'
+          id='underline'
         >
           S i t e
         </Link>
@@ -17,13 +17,13 @@ export default function Slice() {
         <Link
           href='https://github.com/2209-Capstone-Team-B/Slice'
           target='blank'
-          className='py-5 mx-2 underline hover:no-underline'
+          id='underline'
         >
           G i t H u b
         </Link>
         <AiOutlineLink />
       </div>
-      <p className='relative text-center min-h-[300px] h-full laptop:w-auto tablet:w-auto iphone:w-auto'>
+      <p className='leading-10 relative text-center min-h-[300px] h-full laptop:w-auto tablet:w-auto iphone:w-auto'>
         Slice exists as a platform for creating ecosystems/organizations of any
         size that want to organize tasks, favors, chores, or anything that needs
         to get done and requires a village. Within these ecosystems, users are
