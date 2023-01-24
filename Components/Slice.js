@@ -23,12 +23,15 @@ export default function Slice() {
         </Link>
         <AiOutlineLink />
       </div>
-      <p className='leading-10 relative text-center min-h-[300px] h-full laptop:w-auto tablet:w-auto iphone:w-auto'>
-        Slice exists as a platform for creating ecosystems/organizations of any
-        size that want to organize tasks, favors, chores, or anything that needs
-        to get done and requires a village. Within these ecosystems, users are
-        given credit for completing something that needs to get done, which
-        promotes transparency and accountability for who does what.
+      <p className='relative text-center min-h-[300px] h-full laptop:w-auto tablet:w-auto iphone:w-auto'>
+        <span className='leading-10'>
+          Slice exists as a platform for creating ecosystems/organizations of
+          any size that want to organize tasks, favors, chores, or anything that
+          needs to get done and requires a village. Within these ecosystems,
+          users are given credit for completing something that needs to get
+          done, which promotes transparency and accountability for who does
+          what.
+        </span>
         <br />
         <br />{' '}
         <span className='text-blue-500 hover:text-cyan-400 duration-500'>
