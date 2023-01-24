@@ -17,7 +17,7 @@ import {
 
 export default function BioSkills() {
   return (
-    <div className=''>
+    <>
       <p className='font-extralight iphone:text-lg laptop:text-xl text-center'>
         A{' '}
         <span className='text-blue-500 hover:text-cyan-400 duration-500'>
@@ -93,6 +93,6 @@ export default function BioSkills() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
