@@ -21,9 +21,8 @@ import {
   SiSequelize,
 } from 'react-icons/si';
 import { BsArrowDownShort } from 'react-icons/bs';
-import { AiOutlineLink } from 'react-icons/ai';
-import Aos from 'aos';
-import 'aos/dist/aos';
+import { Fade, Zoom } from 'react-awesome-reveal';
+import Slice from '../Components/Slice';
 
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(false);
@@ -40,7 +39,6 @@ const useMediaQuery = (width) => {
     const media = window.matchMedia(`(max-width: ${width}px)`);
     media.addListener(updateTarget);
 
-    Aos.init({ duration: 2000 });
     // Check on mount (callback is not called until a change occurs)
     if (media.matches) {
       setTargetReached(true);
@@ -91,12 +89,12 @@ export default function Home() {
                 >
                   Home
                 </Link>
-                <a
-                  href='#projects'
+                <Link
+                  href='/#projects'
                   className='px-3 hover:underline hover:scale-110 duration-500'
                 >
                   Projects
-                </a>
+                </Link>
                 <Link
                   href='/about'
                   className='px-3 hover:underline hover:scale-110 duration-500'
@@ -110,96 +108,98 @@ export default function Home() {
             </nav>
           )}
         </>
-        <div className='laptop:flex tablet:flex m-5 mx-10 iphone:h-auto laptop:h-auto'>
-          <div className='flex h-full tablet:w-full iphone:w-full laptop:w-1/2'>
-            <div className='relative min-h-[300px] h-atuo laptop:w-full tablet:w-full iphone:w-full'>
-              <Image
-                alt='Scott Irwin'
-                layout='fill'
-                objectFit='contain'
-                quality={100}
-                src='/headshot.png'
-              />
+        <Fade triggerOnce delay={200}>
+          <div className='laptop:flex tablet:flex m-5 mx-10 iphone:h-auto laptop:h-auto'>
+            <div className='h-full tablet:w-full iphone:w-full iphone:h-1/2 laptop:w-1/2'>
+              <div className='relative min-h-[500px] h-atuo laptop:w-full tablet:w-full iphone:w-full'>
+                <Image
+                  alt='Scott Irwin'
+                  layout='fill'
+                  objectFit='contain'
+                  quality={100}
+                  src='/headshot.png'
+                />
+              </div>
             </div>
-          </div>
-          <div className='flex justify-center items-center laptop:w-3/4 mx-5'>
-            <div className='font-serif'>
-              <p className='font-extralight iphone:text-lg laptop:text-xl text-center'>
-                A{' '}
-                <span className='text-blue-500 hover:text-cyan-400 duration-500'>
-                  Software Developer{' '}
-                </span>
-                with experience building
-                <span className='text-blue-500 hover:text-cyan-400 duration-700'>
-                  {' '}
-                  fullstack web applications.{' '}
-                </span>
-                <br />
-                <br />
-                My time in the Navy taught me the value of strong leadership,
-                teamwork, and perseverance. I often rely my Bachelor of Arts -
-                BA in Psychology and Design & Engineering from Wesleyan
-                University to think critically about problems in order to find
-                an efficient and inclusive solution.
-              </p>
-              <hr className='my-5' />
-              {/* V------- icon container -------V */}
+            <div className='flex justify-center items-center laptop:w-3/4 mx-5'>
+              <div className='font-serif'>
+                <p className='font-extralight iphone:text-lg laptop:text-xl text-center'>
+                  A{' '}
+                  <span className='text-blue-500 hover:text-cyan-400 duration-500'>
+                    Software Developer{' '}
+                  </span>
+                  with experience building
+                  <span className='text-blue-500 hover:text-cyan-400 duration-700'>
+                    {' '}
+                    fullstack web applications.{' '}
+                  </span>
+                  <br />
+                  <br />
+                  My time in the Navy taught me the value of strong leadership,
+                  teamwork, and perseverance. I often rely my Bachelor of Arts -
+                  BA in Psychology and Design & Engineering from Wesleyan
+                  University to think critically about problems in order to find
+                  an efficient and inclusive solution.
+                </p>
+                <hr className='my-20' />
+                {/* V------- icon container -------V */}
 
-              <div>
-                {/* V------ Proficient ------V */}
-                <div className='flex justify-between'>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
-                    <DiJavascript size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Javascript</p>
+                <div>
+                  {/* V------ Proficient ------V */}
+                  <div className='flex justify-between'>
+                    <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                      <DiJavascript size={40} color='gray' />
+                      <p className='text-gray-500 text-center'>Javascript</p>
+                    </div>
+                    <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                      <DiHtml5 size={40} color='gray' />
+                      <p className='text-gray-500 text-center'>HTML</p>
+                    </div>
+                    <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                      <DiCss3 size={40} color='gray' />
+                      <p className='text-gray-500 text-center'>CSS</p>
+                    </div>
+                    <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                      <DiReact size={40} color='gray' />
+                      <p className='text-gray-500 text-center'>React</p>
+                    </div>
+                    <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                      <SiRedux size={40} color='gray' />
+                      <p className='text-gray-500 text-center'>Redux</p>
+                    </div>
+                    <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                      <DiNodejsSmall size={40} color='gray' />
+                      <p className='text-gray-500 text-center'>Express</p>
+                    </div>
                   </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
-                    <DiHtml5 size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>HTML</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
-                    <DiCss3 size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>CSS</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
-                    <DiReact size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>React</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
-                    <SiRedux size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Redux</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
-                    <DiNodejsSmall size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Express</p>
-                  </div>
-                </div>
-                {/* V------ Knowledgeable ------V */}
-                <div className='flex justify-evenly mt-10'>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
-                    <SiPostgresql size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Postgresql</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
-                    <SiSequelize size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Sequelize</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
-                    <SiNextdotjs size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Next</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
-                    <SiFirebase size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Firebase</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-500'>
-                    <SiTailwindcss size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Tailwindcss</p>
+                  {/* V------ Knowledgeable ------V */}
+                  <div className='flex justify-evenly mt-10'>
+                    <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                      <SiPostgresql size={40} color='gray' />
+                      <p className='text-gray-500 text-center'>Postgresql</p>
+                    </div>
+                    <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                      <SiSequelize size={40} color='gray' />
+                      <p className='text-gray-500 text-center'>Sequelize</p>
+                    </div>
+                    <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                      <SiNextdotjs size={40} color='gray' />
+                      <p className='text-gray-500 text-center'>Next</p>
+                    </div>
+                    <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                      <SiFirebase size={40} color='gray' />
+                      <p className='text-gray-500 text-center'>Firebase</p>
+                    </div>
+                    <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                      <SiTailwindcss size={40} color='gray' />
+                      <p className='text-gray-500 text-center'>Tailwindcss</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </Fade>
         <div className='flex justify-center'>
           <hr className='mt-20 w-1/4 text-center' />
           <h1 className='text-center text-gray-500 mt-16 mx-5 text-2xl font-serif flex flex-shrink'>
@@ -215,58 +215,21 @@ export default function Home() {
             className='mt-10 animate-bounce duration-150'
           />
         </div>
-        <div className=' font-serif flex flex-col justify-center items-center m-5 iphone:h-auto laptop:h-auto'>
-          <div className='relative min-h-[300px] h-auto laptop:w-full tablet:w-full iphone:w-full'>
+        <div className='font-serif flex flex-col items-center m-5 iphone:h-auto laptop:h-auto'>
+          <div className='relative min-h-[300px] h-auto bg-transparent laptop:w-full tablet:w-full iphone:w-full'>
             <Image
               alt='Slice App'
               layout='fill'
               objectFit='contain'
               quality={100}
-              src='/sliceMock.png'
+              src='/slice.png'
             />
           </div>
-          <div className='w-3/4 flex flex-col justify-center items-center'>
-            <div className='flex justify-center items-center '>
-              <a
-                href='https://slice-task.vercel.app/'
-                target='blank'
-                className='py-5 mx-2 underline hover:no-underline'
-              >
-                S i t e
-              </a>
-              <AiOutlineLink />
-              <a
-                href='https://github.com/2209-Capstone-Team-B/Slice'
-                target='blank'
-                className='py-5 mx-2 underline hover:no-underline'
-              >
-                G i t H u b
-              </a>
-              <AiOutlineLink />
-            </div>
-            <p className='relative text-center min-h-[300px] h-full laptop:w-auto tablet:w-auto iphone:w-auto'>
-              Slice exists as a platform for creating ecosystems/organizations
-              of any size that want to organize tasks, favors, chores, or
-              anything that needs to get done and requires a village. Within
-              these ecosystems, users are given credit for completing something
-              that needs to get done, which promotes transparency and
-              accountability for who does what.
-              <br />
-              <br />{' '}
-              <span className='text-blue-500 hover:text-cyan-400 duration-500'>
-                Frontend:{' '}
-              </span>
-              JavaScript, Next.JS, React - Redux, Tailwind CSS, Material UI{' '}
-              <br />
-              <br />{' '}
-              <span className='text-blue-500 hover:text-cyan-400 duration-500'>
-                Backend:{' '}
-              </span>
-              Firebase/Firestore
-            </p>
-          </div>
+          <Zoom className='w-3/4 flex flex-col justify-center items-center'>
+            <Slice />
+          </Zoom>
         </div>
-        <div className='flex m-5 border justify-center items-center iphone:h-1/2 laptop:h-1/2'>
+        <div className='flex m-5 border justify-center items-center iphone:h-1/2 laptop:h-1/2 rounded-3xl'>
           <p className='text-2xl'>
             This Website is still being built! Keep checking in to watch me
             build and debug!

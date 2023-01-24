@@ -1,0 +1,45 @@
+import React from 'react';
+import { AiOutlineLink } from 'react-icons/ai';
+
+export default function Slice() {
+  return (
+    <>
+      <div className='flex justify-center items-center '>
+        <a
+          href='https://slice-task.vercel.app/'
+          target='blank'
+          className='py-5 mx-2 underline hover:no-underline'
+        >
+          S i t e
+        </a>
+        <AiOutlineLink />
+        <a
+          href='https://github.com/2209-Capstone-Team-B/Slice'
+          target='blank'
+          className='py-5 mx-2 underline hover:no-underline'
+        >
+          G i t H u b
+        </a>
+        <AiOutlineLink />
+      </div>
+      <p className='relative text-center min-h-[300px] h-full laptop:w-auto tablet:w-auto iphone:w-auto'>
+        Slice exists as a platform for creating ecosystems/organizations of any
+        size that want to organize tasks, favors, chores, or anything that needs
+        to get done and requires a village. Within these ecosystems, users are
+        given credit for completing something that needs to get done, which
+        promotes transparency and accountability for who does what.
+        <br />
+        <br />{' '}
+        <span className='text-blue-500 hover:text-cyan-400 duration-500'>
+          Frontend:{' '}
+        </span>
+        JavaScript, Next.JS, React - Redux, Tailwind CSS, Material UI <br />
+        <br />{' '}
+        <span className='text-blue-500 hover:text-cyan-400 duration-500'>
+          Backend:{' '}
+        </span>
+        Firebase/Firestore
+      </p>
+    </>
+  );
+}
