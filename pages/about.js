@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Navbar from '../Components/Navbar';
+import { Slide } from 'react-awesome-reveal';
 
 export default function about() {
   const useMediaQuery = (width) => {
@@ -52,7 +53,6 @@ export default function about() {
         </p>
         {/* <div className='absolute h-[300px] w-[300px] bg-purple-50 z-[-1] left-20'></div>
         <div className='absolute h-[200px] w-[200px] bg-red-50 z-[-1] right-20 top-60 rounded-[100%]'></div> */}
-
         <div id='triangle-pointL' className='h-0 w-0 absolute z-[-1]'></div>
         <div id='triangle-pointR' className='h-0 w-0 absolute z-[-1]'></div>
       </div>
