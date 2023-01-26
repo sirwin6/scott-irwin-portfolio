@@ -113,7 +113,7 @@ export default function Home() {
             </nav>
           )}
         </>
-        <div className='laptop:flex tablet:flex m-5 mx-10 iphone:h-auto laptop:h-auto'>
+        <div className='laptop:flex tablet:flex m-10 mt-16 iphone:h-auto laptop:h-auto'>
           <div className='h-full tablet:w-full iphone:w-full iphone:h-1/2 laptop:w-1/2'>
             <Fade direction='left' triggerOnce delay={200}>
               <div className='relative min-h-[500px] h-atuo laptop:w-full tablet:w-full iphone:w-full'>
@@ -133,8 +133,11 @@ export default function Home() {
             className='flex justify-center items-center laptop:w-3/4 mx-5'
           >
             <div>
+              <p className='text-center text-5xl mb-10 font-light tracking-wide hover:tracking-widest duration-200'>
+                Hi, my name is Scott Irwin.
+              </p>
               <p className='font-extralight iphone:text-lg laptop:text-xl text-center'>
-                A{' '}
+                I am more than just a{' '}
                 <span className='text-blue-500 hover:text-cyan-400 duration-500'>
                   Software Developer{' '}
                 </span>
@@ -144,18 +147,32 @@ export default function Home() {
                   fullstack web applications.{' '}
                 </span>
                 <br />
+                <br />I am a{' '}
+                <span className='text-blue-500 hover:text-cyan-400 duration-700'>
+                  fitness{' '}
+                </span>
+                enthusiast with a love for{' '}
+                <span className='text-blue-500 hover:text-cyan-400 duration-700'>
+                  surfing
+                </span>{' '}
+                and being outside.
+                <br />
                 <br />
                 <span className='leading-10'>
-                  My time in the Navy taught me the value of strong leadership,
-                  teamwork, and perseverance. I often rely my Bachelor of Arts -
-                  BA in Psychology and Design & Engineering from Wesleyan
-                  University to think critically about problems in order to find
-                  an efficient and inclusive solution.
+                  I thirve in{' '}
+                  <span className='text-blue-500 hover:text-cyan-400 duration-700'>
+                    team oriented
+                  </span>{' '}
+                  environments, and nothing excites me more than a difficult{' '}
+                  <span className='text-blue-500 hover:text-cyan-400 duration-700'>
+                    problem to solve.
+                  </span>{' '}
+                  I am passionate about learning, creating, and helping my
+                  teamates become the best versions of themselves.
                 </span>
               </p>
               <hr className='my-20' />
               {/* V------- icon container -------V */}
-
               <div>
                 {/* V------ Proficient ------V */}
                 <div className='flex justify-between'>

@@ -32,4 +32,4 @@ yarn-error.log*
 .vercel
 sendgrid.env
 sendgrid.env
-.env
+local.env
