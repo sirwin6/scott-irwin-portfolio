@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function Navbar() {
+export default function Navbar({ iconColor }) {
   return (
     <nav className='flex justify-between items-center laptop:px-6 iphone:p-2 laptop:mt-6 iphone:mt-2'>
       <p
-        id='glowGreen'
-        className='text-emerald-400 laptop:text-3xl p-5 iphone:text-xl iphone:text-center bg-slate-100 shadow-md'
+        id={`glow${iconColor}`}
+        className={`text-${iconColor}-400 laptop:text-3xl p-5 iphone:text-xl iphone:text-center bg-slate-100 shadow-md`}
       >
         S.I.
       </p>
@@ -29,9 +29,12 @@ export default function Navbar() {
         >
           About
         </Link>
-        <p className='px-3 hover:underline hover:scale-110 duration-500'>
+        <Link
+          href='/contact'
+          className='px-3 hover:underline hover:scale-110 duration-500'
+        >
           Contact
-        </p>
+        </Link>
       </div>
     </nav>
   );
