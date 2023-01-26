@@ -103,9 +103,12 @@ export default function Home() {
                 >
                   About
                 </Link>
-                <p className='px-3 hover:underline hover:scale-110 duration-500'>
+                <Link
+                  href='/contact'
+                  className='px-3 hover:underline hover:scale-110 duration-500'
+                >
                   Contact
-                </p>
+                </Link>
               </div>
             </nav>
           )}
@@ -208,7 +211,7 @@ export default function Home() {
             </div>
           </Fade>
         </div>
-        <div className='flex justify-center'>
+        <div className='flex justify-center laptop:my-20'>
           <hr className='mt-20 w-1/4 text-center' />
           <h1 className='text-center text-gray-500 mt-16 mx-5 text-2xl flex flex-shrink'>
             P r o j e c t s
@@ -237,7 +240,7 @@ export default function Home() {
             <Slice />
           </Zoom>
         </div>
-        <footer className='h-1/2 bg-blue-200 flex'>
+        <footer className='h-1/4 bg-blue-200 flex'>
           <Footer />
         </footer>
       </main>
