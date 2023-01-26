@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import { GrMail } from 'react-icons/gr';
-import { Fade, Zoom, Slide } from 'react-awesome-reveal';
 
 export default function Footer() {
   return (
