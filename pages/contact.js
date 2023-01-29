@@ -1,9 +1,38 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useCallback, useEffect } from 'react';
 // import emailjs from '@emailjs/browser';
 import Footer from '../Components/Footer';
 import Navbar from '../Components/Navbar';
+import HamburgerMenu from '../Components/HamburgerMenu';
 
 export default function Contact() {
+  const useMediaQuery = (width) => {
+    const [targetReached, setTargetReached] = useState(false);
+
+    const updateTarget = useCallback((e) => {
+      if (e.matches) {
+        setTargetReached(true);
+      } else {
+        setTargetReached(false);
+      }
+    }, []);
+
+    useEffect(() => {
+      const media = window.matchMedia(`(max-width: ${width}px)`);
+      media.addListener(updateTarget);
+
+      // Check on mount (callback is not called until a change occurs)
+      if (media.matches) {
+        setTargetReached(true);
+      }
+
+      return () => media.removeListener(updateTarget);
+    }, [width, updateTarget]);
+
+    return targetReached;
+  };
+
+  const isBreakpoint = useMediaQuery(1023);
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -79,21 +108,24 @@ export default function Contact() {
         console.log(error);
         setShowSuccessMessage(false);
         setShowFailureMessage(true);
-        setButtonText('Send');
         return;
       }
       setShowSuccessMessage(true);
       setShowFailureMessage(false);
-      setButtonText('Send');
+      setButtonText('Sent');
     }
 
-    console.log('show success', showSuccessMessage);
+    console.log('show success', showFailureMessage);
     console.log(firstName, lastName, email, subject, message);
   };
 
   return (
     <div className='h-screen w-screen'>
-      <Navbar iconColor={'orange'} />
+      {isBreakpoint ? (
+        <HamburgerMenu displayIcon={true} iconColor={'orange'} />
+      ) : (
+        <Navbar iconColor={'orange'} />
+      )}
       <div className='flex flex-col mt-20 justify-center items-center'>
         <h2 className='text-5xl font-extralight'>Send me and Email</h2>
         <form
@@ -115,7 +147,7 @@ export default function Contact() {
               setFirstName(e.target.value);
             }}
             name='firstName'
-            className='w-1/2 h-10 border border-black text-center rounded-lg'
+            className='w-1/2 h-10 border border-black px-3 rounded-lg'
           ></input>
 
           {/* ------- LAST NAME ------- */}
@@ -132,7 +164,7 @@ export default function Contact() {
               setLastName(e.target.value);
             }}
             name='lastName'
-            className='w-1/2 h-10 border border-black text-center rounded-lg'
+            className='w-1/2 h-10 border border-black px-3 rounded-lg'
           ></input>
 
           {/* ------- EMAIL ------- */}
@@ -150,7 +182,7 @@ export default function Contact() {
               setEmail(e.target.value);
             }}
             name='email'
-            className='w-1/2 h-10 border border-black text-center rounded-lg'
+            className='w-1/2 h-10 border border-black px-3 rounded-lg'
           ></input>
 
           {/* ------- SUBJECT ------- */}
@@ -167,7 +199,7 @@ export default function Contact() {
               setSubject(e.target.value);
             }}
             name='subject'
-            className='w-1/2 h-10 border border-black text-center rounded-lg'
+            className='w-1/2 h-10 border border-black px-3 rounded-lg'
           ></input>
 
           {/* ------- MESSAGE ------- */}
@@ -177,15 +209,15 @@ export default function Contact() {
           >
             Message<span className='text-red-500 dark:text-gray-50'>*</span>
           </label>
-          <input
+          <textarea
             type='text'
             value={message}
             onChange={(e) => {
               setMessage(e.target.value);
             }}
             name='message'
-            className='w-1/2 h-40 border border-black rounded-lg'
-          ></input>
+            className='w-1/2 h-40 resize-none p-3 border border-black rounded-lg'
+          ></textarea>
           <button
             value={buttonText}
             className='px-10 my-4 py-1 hover:bg-orange-200 bg-orange-50 hover:text-black hover:border-orange-600 duration-200 text-gray-700 font-light rounded-lg border border-black text-lg flex items-center'

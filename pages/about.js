@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import { Fade, Slide, Zoom } from 'react-awesome-reveal';
+import HamburgerMenu from '../Components/HamburgerMenu';
 
-export default function about() {
+export default function About() {
   const useMediaQuery = (width) => {
     const [targetReached, setTargetReached] = useState(false);
 
@@ -31,9 +32,14 @@ export default function about() {
     return targetReached;
   };
 
+  const isBreakpoint = useMediaQuery(1023);
   return (
     <div className='h-screen'>
-      <Navbar iconColor={'emerald'} />
+      {isBreakpoint ? (
+        <HamburgerMenu displayIcon={true} iconColor={'green'} />
+      ) : (
+        <Navbar iconColor={'emerald'} />
+      )}
       <div className='h-screen iphone:w-full flex iphone:justify-around flex-wrap'>
         <div className='flex flex-wrap mb-36 justify-around'>
           <Slide className='iphone:m-10 laptop:ml-20 inline-block pt-12'>
@@ -104,8 +110,8 @@ export default function about() {
             player.
           </Slide>
         </div>
-        <div className='flex flex-wrap-reverse justify-around tablet:mt-60 latop:mt-60 iphone:mt-20'>
-          <Slide className='text-right laptop:text-xl h-2/3 font-extralight laptop:leading-10 tablet:leading-10 iphone:leading-10 laptop:ml-40 flex laptop:items-center laptop:w-[23%] desktop:w-1/4 iphone:w-3/4 tablet:w-3/4 tablet:my-10 iphone:m-10 laptop:my-0'>
+        <div className='flex flex-wrap-reverse justify-around'>
+          <Slide className='text-right laptop:text-xl font-extralight laptop:leading-10 tablet:leading-10 iphone:leading-10 laptop:ml-40 flex laptop:items-center laptop:w-[23%] desktop:w-1/4 iphone:w-3/4 tablet:w-3/4 tablet:my-10 iphone:m-10 laptop:my-0'>
             After seperation from the navy, I spent a lot of time in my 2016
             buick encore. From San diego, to Sun Valley Idaho, with stops in
             Santa Barbara and Lake Tahoe, the west coast has given me tons of

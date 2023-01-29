@@ -8,7 +8,6 @@ import Footer from '../Components/Footer';
 import { useEffect, useState, useCallback } from 'react';
 import { Fade, Zoom } from 'react-awesome-reveal';
 
-import { SlMenu } from 'react-icons/sl';
 import { BsArrowDownShort } from 'react-icons/bs';
 import {
   DiJavascript,
@@ -25,6 +24,7 @@ import {
   SiPostgresql,
   SiSequelize,
 } from 'react-icons/si';
+import HamburgerMenu from '../Components/HamburgerMenu';
 
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(false);
@@ -68,13 +68,11 @@ export default function Home() {
             <nav className='flex justify-between items-center laptop:px-6 iphone:p-2 laptop:mt-6 iphone:mt-2'>
               <p
                 id='glow'
-                className='text-blue-500 rounded-[100%] laptop:text-3xl p-2 iphone:text-2xl iphone:text-center bg-slate-100 shadow-md'
+                className='text-blue-500 inline-block m-2 laptop:text-3xl p-5 iphone:text-xl iphone:text-center bg-slate-100 shadow-md'
               >
                 S.I.
               </p>
-              <div className='mr-10 fixed p-2 right-0 bg-slate-200 rounded-md'>
-                <SlMenu />
-              </div>
+              <HamburgerMenu displayIcon={false} />
             </nav>
           ) : (
             <nav className='flex justify-between items-center laptop:px-6 iphone:p-2 laptop:mt-6 iphone:mt-2'>
@@ -133,7 +131,7 @@ export default function Home() {
             className='flex justify-center items-center laptop:w-3/4 mx-5'
           >
             <div>
-              <p className='text-center text-5xl mb-10 font-light tracking-wide hover:tracking-widest duration-200'>
+              <p className='text-center laptop:text-5xl tablet:text-4xl iphone:text-4xl mb-10 font-light tracking-wide hover:tracking-widest duration-200'>
                 Hi, my name is Scott Irwin.
               </p>
               <p className='font-extralight iphone:text-lg laptop:text-xl text-center'>
@@ -171,70 +169,86 @@ export default function Home() {
                   teamates become the best versions of themselves.
                 </span>
               </p>
-              <hr className='my-20' />
-              {/* V------- icon container -------V */}
-              <div>
-                {/* V------ Proficient ------V */}
-                <div className='flex justify-between'>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
-                    <DiJavascript size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Javascript</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
-                    <DiHtml5 size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>HTML</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
-                    <DiCss3 size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>CSS</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
-                    <DiReact size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>React</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
-                    <SiRedux size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Redux</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
-                    <DiNodejsSmall size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Express</p>
-                  </div>
-                </div>
-                {/* V------ Knowledgeable ------V */}
-                <div className='flex justify-evenly mt-10'>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
-                    <SiPostgresql size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Postgresql</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
-                    <SiSequelize size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Sequelize</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
-                    <SiNextdotjs size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Next</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
-                    <SiFirebase size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Firebase</p>
-                  </div>
-                  <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
-                    <SiTailwindcss size={40} color='gray' />
-                    <p className='text-gray-500 text-center'>Tailwindcss</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </Fade>
         </div>
-        <div className='flex justify-center laptop:my-20'>
-          <hr className='mt-20 w-1/4 text-center' />
-          <h1 className='text-center text-gray-500 mt-16 mx-5 text-2xl flex flex-shrink'>
+        <div className='flex justify-center my-20'>
+          <hr className='mt-4 w-1/4 text-center' />
+          <h1 className='text-center text-gray-500 mx-5 text-2xl flex flex-shrink'>
+            S k i l l s
+          </h1>
+          <a id='projects'></a>
+          <hr className='mt-4 w-1/4 text-center flex flex-shrink' />
+        </div>
+        <div className='flex justify-center'>
+          <BsArrowDownShort
+            size={30}
+            color={'gray'}
+            className='mb-8 animate-bounce duration-150'
+          />
+        </div>
+        {/* V------- icon container -------V */}
+        <div className='flex justify-center'>
+          <div className='flex flex-col w-5/6'>
+            {/* V------ Proficient ------V */}
+            <div className='flex flex-wrap justify-around'>
+              <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                <DiJavascript size={40} color='gray' />
+                <p className='text-gray-500 text-center'>Javascript</p>
+              </div>
+              <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                <DiHtml5 size={40} color='gray' />
+                <p className='text-gray-500 text-center'>HTML</p>
+              </div>
+              <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                <DiCss3 size={40} color='gray' />
+                <p className='text-gray-500 text-center'>CSS</p>
+              </div>
+              <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                <DiReact size={40} color='gray' />
+                <p className='text-gray-500 text-center'>React</p>
+              </div>
+              <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                <SiRedux size={40} color='gray' />
+                <p className='text-gray-500 text-center'>Redux</p>
+              </div>
+              <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                <DiNodejsSmall size={40} color='gray' />
+                <p className='text-gray-500 text-center'>Express</p>
+              </div>
+            </div>
+            {/* V------ Knowledgeable ------V */}
+            <div className='flex flex-wrap justify-around mt-10'>
+              <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                <SiPostgresql size={40} color='gray' />
+                <p className='text-gray-500 text-center'>Postgresql</p>
+              </div>
+              <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                <SiSequelize size={40} color='gray' />
+                <p className='text-gray-500 text-center'>Sequelize</p>
+              </div>
+              <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                <SiNextdotjs size={40} color='gray' />
+                <p className='text-gray-500 text-center'>Next</p>
+              </div>
+              <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                <SiFirebase size={40} color='gray' />
+                <p className='text-gray-500 text-center'>Firebase</p>
+              </div>
+              <div className='flex flex-col justify-center items-center hover:scale-110 duration-200'>
+                <SiTailwindcss size={40} color='gray' />
+                <p className='text-gray-500 text-center'>Tailwindcss</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='flex justify-center my-28'>
+          <hr className='mt-4 w-1/4 text-center' />
+          <h1 className='text-center text-gray-500 mx-5 text-2xl flex flex-shrink'>
             P r o j e c t s
           </h1>
           <a id='projects'></a>
-          <hr className='mt-20 w-1/4 text-center flex flex-shrink' />
+          <hr className='mt-4 w-1/4 text-center flex flex-shrink' />
         </div>
         <div className='flex justify-center'>
           <BsArrowDownShort
