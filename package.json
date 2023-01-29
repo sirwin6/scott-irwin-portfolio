@@ -11,6 +11,8 @@
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.6",
     "@next/font": "13.1.1",
     "@sendgrid/mail": "^7.7.0",
     "animate.css": "^4.1.1",
