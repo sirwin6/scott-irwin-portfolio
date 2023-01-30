@@ -76,8 +76,8 @@ export default function Contact() {
       isValid = false;
     }
 
-    setErrors({ ...tempErrors });
     console.log('errors', errors);
+    setErrors({ ...tempErrors });
     return isValid;
   };
 
@@ -104,7 +104,7 @@ export default function Contact() {
 
       const { error } = await res.json();
 
-      if (error) {
+      if (error.length > 0) {
         console.log(error);
         setShowSuccessMessage(false);
         setShowFailureMessage(true);
@@ -138,7 +138,14 @@ export default function Contact() {
             htmlFor='firstName'
             className='text-gray-500 font-light text-left w-1/2 mt-6 dark:text-gray-50'
           >
-            First Name<span className='text-red-500 dark:text-gray-50'>*</span>
+            {errors['firstName'] ? (
+              <span className='text-red-500'>
+                Please include your first name
+              </span>
+            ) : (
+              'first Name'
+            )}
+            <span className='text-red-500 dark:text-gray-50'>*</span>
           </label>
           <input
             type='text'
@@ -155,7 +162,14 @@ export default function Contact() {
             htmlFor='lastName'
             className='text-gray-500 font-light text-left w-1/2 mt-6 dark:text-gray-50'
           >
-            Last Name<span className='text-red-500 dark:text-gray-50'>*</span>
+            {errors['lastName'] ? (
+              <span className='text-red-500'>
+                Please include your last name
+              </span>
+            ) : (
+              'Last Name'
+            )}
+            <span className='text-red-500 dark:text-gray-50'>*</span>
           </label>
           <input
             type='text'
@@ -172,7 +186,13 @@ export default function Contact() {
             htmlFor='email'
             className='text-gray-500 font-light text-left w-1/2 mt-6 dark:text-gray-50'
           >
-            Your Email Adress
+            {errors['email'] ? (
+              <span className='text-red-500'>
+                Please include your email address
+              </span>
+            ) : (
+              'Your Email Adress'
+            )}
             <span className='text-red-500 dark:text-gray-50'>*</span>
           </label>
           <input
@@ -190,7 +210,12 @@ export default function Contact() {
             htmlFor='subject'
             className='text-gray-500 font-light text-left w-1/2 mt-6 dark:text-gray-50'
           >
-            Subject<span className='text-red-500 dark:text-gray-50'>*</span>
+            {errors['subject'] ? (
+              <span className='text-red-500'>Please include a subject</span>
+            ) : (
+              'Subject'
+            )}
+            <span className='text-red-500 dark:text-gray-50'>*</span>
           </label>
           <input
             type='text'
@@ -207,7 +232,12 @@ export default function Contact() {
             htmlFor='message'
             className='text-gray-500 font-light text-left w-1/2 mt-6 dark:text-gray-50'
           >
-            Message<span className='text-red-500 dark:text-gray-50'>*</span>
+            {errors['message'] ? (
+              <span className='text-red-500'>Please include your message</span>
+            ) : (
+              'Message'
+            )}
+            <span className='text-red-500 dark:text-gray-50'>*</span>
           </label>
           <textarea
             type='text'
@@ -220,10 +250,21 @@ export default function Contact() {
           ></textarea>
           <button
             value={buttonText}
+            onClick={handleSubmit}
             className='px-10 my-4 py-1 hover:bg-orange-200 bg-orange-50 hover:text-black hover:border-orange-600 duration-200 text-gray-700 font-light rounded-lg border border-black text-lg flex items-center'
           >
             {buttonText}
           </button>
+          <p>
+            {showSuccessMessage ? (
+              <span className='italic text-orange-500 tracking-wider'>
+                Thank you for reaching out, I will get back to you as soon as I
+                can!
+              </span>
+            ) : (
+              <></>
+            )}
+          </p>
         </form>
       </div>
       <footer className='h-1/4 bg-orange-200 flex'>
