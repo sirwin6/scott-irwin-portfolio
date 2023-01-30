@@ -28,7 +28,7 @@ export default function HamburgerMenu({ iconColor, displayIcon }) {
       ) : (
         <></>
       )}
-      <div className='mx-10 right-0 top-0 fixed opacity-[90%] rounded-md z-10'>
+      <div className='mx-10 right-0 top-0 fixed opacity-[90%] inline-block rounded-md z-10'>
         <Button
           id='basic-button'
           aria-controls={open ? 'basic-menu' : undefined}
