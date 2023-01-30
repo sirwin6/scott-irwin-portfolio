@@ -249,6 +249,7 @@ export default function Contact() {
             className='w-1/2 h-40 resize-none p-3 border border-black rounded-lg'
           ></textarea>
           <button
+            disabled={buttonText === 'Sent' ? true : false}
             value={buttonText}
             onClick={handleSubmit}
             className='px-10 my-4 py-1 hover:bg-orange-200 bg-orange-50 hover:text-black hover:border-orange-600 duration-200 text-gray-700 font-light rounded-lg border border-black text-lg flex items-center'
