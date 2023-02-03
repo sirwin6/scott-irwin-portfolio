@@ -116,7 +116,7 @@ export default function About() {
             buick encore. From San diego, to Sun Valley Idaho, with stops in
             Santa Barbara and Lake Tahoe, the west coast has given me tons of
             reasons to put in hundreds of miles on the road. If you have any
-            ideas of where I shoudl go next, feel free to drop me an email.
+            ideas of where I should go next, feel free to drop me an email.
           </Slide>
           <Slide direction='right' className='iphone:m-10 inline-block pt-12'>
             <Image
